@@ -19,7 +19,8 @@
 
      解决：
      
-          转换为同类型进行运算，例如：JSON: {a_num: "1", b_num: "2"}，要进行 a_num + b_num 加运算， 应写：Number(a_num) + Number(b_num)
+        转换为同类型进行运算，
+          例如：JSON: {a_num: "1", b_num: "2"}，要进行 a_num + b_num 加运算， 应写：Number(a_num) + Number(b_num)
 
      提示：
      
