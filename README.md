@@ -136,7 +136,7 @@
                     
      2). 熟悉掌握现有库中的高阶函数。
                     
-          var names = ["weixiang", "xiangwo", "chengle"];
+          var names = ["weixiang", "xiaowu", "chengle"];
           var uppers = names.map(function(name) {
                return name.toUpperCase();
           });
