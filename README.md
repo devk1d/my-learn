@@ -152,7 +152,7 @@
                // code...
           }
  
-8. 使用call和apply转换接收者（this）
+8. 使用 call、apply 和 bind 转换接收者（this）
 
           function hello(msg) {
                return "Hello, " + this.name + ", " + msg;
@@ -163,9 +163,9 @@
                name: "weixiang"
           };
           
-          hello.call(obj, msg);  // Hello, weixiang, Good morning
-          hello.apply(obj, [msg]);  // Hello, weixiang, Good morning
-
+         hello.call(obj, msg);  // Hello, weixiang, Good morning
+         hello.apply(obj, [msg]);  // Hello, weixiang, Good morning
+		 hello.bind(obj); // 返回函数，非调用
 9. 在原型中储存方法
 
      将方法储存于原型中优于储存在实例对象中：
@@ -202,15 +202,38 @@
      
      提示：切勿共享可变数据
  
+10. 意识到 this 隐式绑定问题
+
+	this 变量的作用域总是由其最近的封闭函数所确定的，使用一个局部变量（通常是 self、me或that）使得 this 绑定对于内部函数是可用的
+		
+		var obj = {
+			$el: $(".ele"),
+			bindEvent: function() {
+				var self = this;
+			
+				this.$ele.on('click', function() {
+					console.log(this);
+					console.log(self);
+				});
+			}
+		}
+11. 库的设计保持一致的约定
+	
+	命名：width、setWidth()、toNext()、getData() ...
+	注释：使用注释区分功能块
+
+12. 避免过多嵌套
+	
+13. 使用计数器来执行并行操作
+
+	例子：多图片加载完成再显示
+	
 
 
-
-其他：
-     1. 避免使用 eval
-     2. 灵活使用 arguments
+14. 其他：
+     1). 避免使用 eval
+     2). 灵活使用 arguments
       
           1). arguments.length, arguments[0]
-          2). var args = [].slice.call(arguments);  // 安全转为数组
-          3).  
-
+          2). var args = [].slice.call(arguments);  //不要修改arguments，安全转为数组
 
