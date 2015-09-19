@@ -13,3 +13,10 @@
 	    #define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
 	    #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 	    #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+
+2. url encode
+
+	    NSString *urlString = [NSString stringWithFormat:@"%@", self.text];
+	    NSString *escapedUrl = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escapedUrl]];
