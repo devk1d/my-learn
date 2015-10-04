@@ -22,9 +22,8 @@
 	    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escapedUrl]];
 
 3. 跳转
-		
-	     
-    	    ResultViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-    	    vc.text = [self.history objectAtIndex:indexPath.row];
-    	    vc.isShowHistoryBtn = NO;
-    	    [self.navigationController pushViewController:vc animated:YES];
+	
+	    ResultViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+	    vc.text = [self.history objectAtIndex:indexPath.row];
+	    vc.isShowHistoryBtn = NO;
+	    [self.navigationController pushViewController:vc animated:YES];
