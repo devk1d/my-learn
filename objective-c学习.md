@@ -27,3 +27,14 @@
 	    vc.text = [self.history objectAtIndex:indexPath.row];
 	    vc.isShowHistoryBtn = NO;
 	    [self.navigationController pushViewController:vc animated:YES];
+
+4. uitableviewcell static
+
+	    -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+	    {
+	    	NSInteger section = indexPath.section;
+	    	NSInteger row = indexPath.row;
+	    	UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+	    	return cell;
+	    }
